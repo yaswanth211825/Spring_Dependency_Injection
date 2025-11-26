@@ -2,10 +2,12 @@ package com.example.Module1HomeWork.Module1HomeWork.implSyrup;
 
 import com.example.Module1HomeWork.Module1HomeWork.SyrupType;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("StrawberrySyrup")
+//@Qualifier("StrawberrySyrup")
+@ConditionalOnProperty(name = "Syrup", havingValue = "StrawberrySyrup")
 public class StrawberryFlavourSyrup implements SyrupType {
     @Override
     public String getSyrup() {
